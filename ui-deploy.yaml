@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jinja-ui
+  name: jinja-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: jinja-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jinja-ui
+    spec:
+      containers:
+      - image: docessonhos/movie-info-ui:0.32
+        name: movie-info-ui
+        ports:
+        - containerPort: 5002
+        resources: {}
+status: {}

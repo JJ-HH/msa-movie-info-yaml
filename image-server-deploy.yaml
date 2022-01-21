@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: image-server
+  name: image-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: image-server
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: image-server
+    spec:
+      containers:
+      - image: docessonhos/movie-image-server:0.21
+        name: movie-image-server
+        resources: {}
+status: {}

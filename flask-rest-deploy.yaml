@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flask-rest
+  name: flask-rest
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flask-rest
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flask-rest
+    spec:
+      containers:
+      - image: docessonhos/movie-info-flask-rest:0.33
+        name: movie-info-flask-rest
+        ports:
+        - containerPort: 5000
+        resources: {}
+status: {}
